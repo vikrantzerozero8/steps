@@ -11,12 +11,8 @@ from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 
 load_dotenv()
-
-import getpass
-import os
-
-if "GOOGLE_API_KEY" not in os.environ:
-    os.environ["GOOGLE_API_KEY"] = getpass("AIzaSyASV-M0EhBk5FypQn3vdvjzhMRu8TirPrQ")
+os.getenv("AIzaSyASV-M0EhBk5FypQn3vdvjzhMRu8TirPrQ")
+genai.configure(api_key=os.getenv("AIzaSyASV-M0EhBk5FypQn3vdvjzhMRu8TirPrQ"))
 
 def get_pdf_text(pdf_docs):
     text = ""
@@ -87,5 +83,5 @@ def main():
                 get_vector_store(text_chunks)
                 st.success("Done")
 
-if __name__ == "__main__":
-    main()                       
+if _name_ == "__main__":
+    main()                                
