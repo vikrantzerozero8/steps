@@ -10,8 +10,10 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 
-load_dotenv()
-os.getenv("AIzaSyASV-M0EhBk5FypQn3vdvjzhMRu8TirPrQ")
+import os
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
+os.getenv('AIzaSyASV-M0EhBk5FypQn3vdvjzhMRu8TirPrQ')
 genai.configure(api_key=os.getenv("AIzaSyASV-M0EhBk5FypQn3vdvjzhMRu8TirPrQ"))
 
 def get_pdf_text(pdf_docs):
